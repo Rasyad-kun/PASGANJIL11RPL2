@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("News");
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -23,23 +25,28 @@ public class MainActivity extends AppCompatActivity {
                 new NewsFragment()).commit();
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
 
                     switch (item.getItemId()){
                         case R.id.nav_news:
+                            setTitle("News");
                             selectedFragment = new NewsFragment();
                             break;
                         case R.id.nav_history:
+                            setTitle("History");
                             selectedFragment = new HistoryFragment();
                             break;
                         case R.id.nav_memo:
+                            setTitle("Memo");
                             selectedFragment = new MemoFragment();
                             break;
                         case R.id.nav_profile:
+                            setTitle("Profile");
                             selectedFragment = new ProfileFragment();
                             break;
                     }
