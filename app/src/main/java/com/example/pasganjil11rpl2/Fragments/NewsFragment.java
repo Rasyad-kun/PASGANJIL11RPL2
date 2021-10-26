@@ -1,5 +1,6 @@
 package com.example.pasganjil11rpl2.Fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,22 +54,30 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
     }
 
     private String FormatedDateAndTime(String beforePublishedAt) {
-        String publishedAt = beforePublishedAt.replace("T", " | ");
-        StringTokenizer splitTime = new StringTokenizer(publishedAt, ":");
-        String dateAndHour = splitTime.nextToken();
-        String minute = splitTime.nextToken();
-
-//        StringTokenizer split = new StringTokenizer(beforePublishedAt, "T");
-//        String date = split.nextToken();
-//        String time = split.nextToken().replace("Z", "");
-//
-//        StringTokenizer splitTime = new StringTokenizer(time, ":");
-//        String hour = splitTime.nextToken();
+//        String publishedAt = beforePublishedAt.replace("T", " | ");
+//        StringTokenizer splitTime = new StringTokenizer(publishedAt, ":");
+//        String dateAndHour = splitTime.nextToken();
 //        String minute = splitTime.nextToken();
-//
-//        return date + " | " + hour + ":" + minute;
 
-        return dateAndHour + ":" + minute;
+//        Versi lainnya
+        StringTokenizer split = new StringTokenizer(beforePublishedAt, "T");
+
+        //date
+        String dates = split.nextToken();
+        StringTokenizer splitDate = new StringTokenizer(dates, "-");
+        String year = splitDate.nextToken();
+        String month = splitDate.nextToken();
+        String date = splitDate.nextToken();
+        String fixDate = date + "/" + month + "/" + year;
+
+        //time
+        String times = split.nextToken();
+        StringTokenizer splitTime = new StringTokenizer(times, ":");
+        String hour = splitTime.nextToken();
+        String minute = splitTime.nextToken();
+        String fixTime = hour + ":" + minute;
+
+        return fixTime + ", " + fixDate;
     }
 
     private void AddData() {
@@ -84,16 +94,16 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject articles = jsonArray.getJSONObject(i);
 
-                                String title, publishedAt, author, description, urlToImage, url;
+                                String title, publishedAt, name, description, urlToImage, url;
                                 title = articles.getString("title");
                                 publishedAt = articles.getString("publishedAt");
                                 publishedAt = FormatedDateAndTime(publishedAt);
-                                author = articles.getString("author");
+                                name = articles.getJSONObject("source").getString("name");
                                 description = articles.getString("description");
                                 urlToImage = articles.getString("urlToImage");
                                 url = articles.getString("url");
 
-                                newsList.add(new NewsModel(title, publishedAt, author, description, urlToImage, url));
+                                newsList.add(new NewsModel(title, publishedAt, name, description, urlToImage, url));
                             }
 
                             ShowData();
@@ -110,7 +120,11 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
                 });
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void ShowData() {
+        DividerItemDecoration itemDecorator = new DividerItemDecoration(v.getContext(), DividerItemDecoration.VERTICAL);
+        itemDecorator.setDrawable(getResources().getDrawable(R.drawable.item_divider));
+        rv_news.addItemDecoration(itemDecorator);
         NewsAdapter newsAdapter = new NewsAdapter(v.getContext(), newsList);
         rv_news.setAdapter(newsAdapter);
         newsAdapter.setOnItemClickListener(this);
@@ -124,6 +138,8 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
         NewsModel clickedRow = newsList.get(position);
 
         intent.putExtra("url", clickedRow.getUrl());
+
+//        Untuk Intent dan intent data
 //        Bundle bundle = new Bundle();
 //        bundle.putString("url",newsList.get(position).getUrl());
 //        WebVIewFragment webVIewFragment = new WebVIewFragment();
@@ -131,6 +147,7 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
 //
 //        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                new WebVIewFragment()).commit();
+
         Toast.makeText(v.getContext(), "" + clickedRow.getTitle(), Toast.LENGTH_SHORT).show();
         startActivity(intent);
 
