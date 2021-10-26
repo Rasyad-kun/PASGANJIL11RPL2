@@ -7,6 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Login Page-->
+    <color name="login_primary">#33A8FD</color>
+
+    <!--Bottom Navigation Bar-->
+    <color name="bttmnavbar_background">#575757</color>
     <color name="active_icon">#33A8FD</color>
     <color name="inactive_icon">#FFFFFFFF</color>
+
+    <!--Default-->
+    <color name="def_headnotifbar">#80575757</color>
+    <color name="def_background">#3A3A3A</color>
+    <color name="def_header">#575757</color>
+    <color name="def_descbullet">#F00000</color>
+
 </resources>

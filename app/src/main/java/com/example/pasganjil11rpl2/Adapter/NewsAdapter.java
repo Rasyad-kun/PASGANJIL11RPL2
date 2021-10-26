@@ -1,5 +1,6 @@
 package com.example.pasganjil11rpl2.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.example.pasganjil11rpl2.R;
 
 import java.util.ArrayList;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder>{
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private final Context naContext;
     private final ArrayList<NewsModel> naNewsList;
 
@@ -44,12 +45,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return new NewsViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
         final NewsModel model = naNewsList.get(position);
         holder.naTitle.setText(model.getTitle());
         holder.naPublishedAt.setText(model.getPublishedAt());
-        holder.naDescription.setText(model.getDescription());
+        holder.naName.setText(model.getName() + "  -");
         Glide.with(naContext)
                 .load(model.getUrlToImage())
                 .thumbnail(Glide.with(naContext).load(R.drawable.loader).centerCrop())
@@ -64,16 +66,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return naNewsList.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder{
+    public class NewsViewHolder extends RecyclerView.ViewHolder {
         public ImageView naUrlToImage;
-        public TextView naTitle, naPublishedAt, naDescription;
+        public TextView naTitle, naPublishedAt, naName;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
             naUrlToImage = itemView.findViewById(R.id.iv_urlToImage_rowNews);
             naTitle = itemView.findViewById(R.id.tv_title_rowNews);
             naPublishedAt = itemView.findViewById(R.id.tv_publishedAt_rowNews);
-            naDescription = itemView.findViewById(R.id.tv_description_rowNews);
+            naName = itemView.findViewById(R.id.tv_name_rowNews);
 
             //OnItemClickListener
             itemView.setOnClickListener(new View.OnClickListener() {

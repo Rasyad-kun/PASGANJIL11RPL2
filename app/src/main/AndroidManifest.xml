@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PASGANJIL11RPL2">
+        android:theme="@style/Theme.Default">
         <activity
             android:name=".WebViewActivity"
             android:exported="false" />
