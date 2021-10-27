@@ -3,20 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/bg_img_row_news_item.xml" value="0.22552083333333334" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_history.xml" value="0.22552083333333334" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_news_web_view.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_splash_screen.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_web_view.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_history.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_memo.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_news.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_weview.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_news_item.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/webview_news.xml" value="0.25" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/bottom_nav.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/header_webview.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/bg_bottom_nav.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/bg_img_row_news_item.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/button_radius.xml" value="0.14" />
+        <entry key="app/src/main/res/drawable/buttonlogin_radius.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/googlelogo_radius.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/ic_memo.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/ic_news.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/ic_refresh.xml" value="0.1025" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.14175724637681159" />
+        <entry key="app/src/main/res/layout/activity_navigation_acitvity.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/fragment_memo.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/row_news_item.xml" value="0.25" />
       </map>
     </option>
   </component>

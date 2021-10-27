@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'realm-android'
 }
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
@@ -43,5 +44,6 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.cardview:cardview:1.0.0"
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
-
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
