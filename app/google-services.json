@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "760369323295",
+    "project_id": "pasganjil11rpl2",
+    "storage_bucket": "pasganjil11rpl2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760369323295:android:e8cdb61736468d6bf2a42a",
+        "android_client_info": {
+          "package_name": "com.example.pasganjil11rpl2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760369323295-dqoi5pgtbi9rq16v3ejag0ikn07h3e9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwLFE4Y868EmOGKTnwFPpoQhcgXyMhpi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760369323295-dqoi5pgtbi9rq16v3ejag0ikn07h3e9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

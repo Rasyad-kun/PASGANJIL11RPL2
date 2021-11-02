@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#3A3A3A">
+    android:background="@color/background_black">
 
     <RelativeLayout
+        android:id="@+id/layout"
         android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
@@ -62,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/googlelogin"
-            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -90,43 +90,44 @@
         </RelativeLayout>
 
         <EditText
-                android:id="@+id/Username"
-                android:layout_below="@+id/or"
-                android:hint="Username"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:inputType="text"
-                android:background="@drawable/button_radius"
-                android:fontFamily="@font/poppins_semibold"
-                android:paddingLeft="20dp"
-                android:textSize="16dp" />
+            android:id="@+id/Username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/or"
+            android:background="@drawable/button_radius"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textSize="16dp" />
 
         <EditText
-                android:id="@+id/Email"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/Username"
-                android:layout_marginTop="8dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:background="@drawable/button_radius"
-                android:fontFamily="@font/poppins_semibold"
-                android:paddingLeft="20dp"
-                android:textSize="16dp" />
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Username"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_radius"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:textSize="16dp" />
 
         <EditText
-                android:id="@+id/Password"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/Email"
-                android:layout_marginTop="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:background="@drawable/button_radius"
-                android:fontFamily="@font/poppins_semibold"
-                android:paddingLeft="20dp"
-                android:textSize="16dp" />
-        <Button
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Email"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_radius"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/create_account"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -140,10 +141,12 @@
             android:textSize="16dp" />
 
         <RelativeLayout
+            android:id="@+id/terms_and_service"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@+id/create_account"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -155,8 +158,26 @@
                 android:textSize="20dp" />
 
         </RelativeLayout>
-        >
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/terms_and_service"
+            android:layout_centerHorizontal="true"
+            android:text="Already Have an Account?"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

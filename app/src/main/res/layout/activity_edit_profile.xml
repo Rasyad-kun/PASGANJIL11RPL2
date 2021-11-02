@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".EditProfile"
     android:background="@color/background_black">
 
     <RelativeLayout
@@ -10,33 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_margin="15dp"
-            android:visibility="invisible"/>
-
         <ImageView
             android:id="@+id/profilepic"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_marginVertical="64dp"
-            app:srcCompat="@drawable/ic_profpic"
             android:background="@drawable/img_bg"
+            app:srcCompat="@drawable/ic_profpic"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"/>
-
-        <ImageView
-            android:id="@+id/editlogo1"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="-25dp"
-            android:layout_toRightOf="@+id/profilepic"
-            app:srcCompat="@drawable/ic_edit_black_24dp" />
 
         <RelativeLayout
             android:id="@+id/line1"
@@ -53,25 +38,15 @@
             android:layout_below="@+id/line1"
             android:layout_marginTop="15dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Username"
+                android:text="NewsBringerUser01"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/editlogo2"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_below="@+id/line1"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="25dp"
-                app:srcCompat="@drawable/ic_edit_black_24dp" />
 
         </RelativeLayout>
 
@@ -92,25 +67,15 @@
             android:layout_below="@+id/line2"
             android:layout_marginTop="15dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="UserEmail@gmail.com"
+                android:text="newsbringer01@gmail.com"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/editlogo3"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_below="@+id/line1"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="25dp"
-                app:srcCompat="@drawable/ic_edit_black_24dp" />
 
         </RelativeLayout>
 
@@ -127,22 +92,37 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/profilelayout"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:gravity="center_vertical">
+
         <TextView
-            android:id="@+id/log_out"
+            android:id="@+id/update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:clickable="true"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center_vertical"
-            android:text="Logout"
+            android:text="Apply Changes"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/update"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Cancel"
             android:textColor="#ff0000"
             android:textSize="18dp" />
+
     </RelativeLayout>
+
 
 </RelativeLayout>
