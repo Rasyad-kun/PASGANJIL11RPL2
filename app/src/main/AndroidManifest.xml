@@ -13,27 +13,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PASGANJIL11RPL2">
         <activity
-            android:name=".PasswordReset"
-            android:exported="true" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".EditProfile"
-            android:exported="true" />
-        <activity
-            android:name=".NavigationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".WebViewActivity"
-            android:exported="false" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".MainActivity">
+            android:name=".Intro.IntroActivity"
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.PasswordReset"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.EditProfile"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.NavigationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.WebViewActivity"
+            android:exported="false" />
+        <activity android:name=".Activities.MainActivity">
         </activity>
 
         <meta-data

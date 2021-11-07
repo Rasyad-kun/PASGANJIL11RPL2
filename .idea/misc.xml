@@ -10,13 +10,18 @@
         <entry key="app/src/main/res/drawable/buttonlogin_radius.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.1055" />
         <entry key="app/src/main/res/drawable/googlelogo_radius.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/headlineslogo.xml" value="0.1075" />
+        <entry key="app/src/main/res/drawable/ic_info.xml" value="0.1055" />
         <entry key="app/src/main/res/drawable/ic_memo.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/ic_news.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/ic_refresh.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/img_bg.xml" value="0.1055" />
+        <entry key="app/src/main/res/drawable/textview_background.xml" value="0.113" />
+        <entry key="app/src/main/res/font/poppins_semibold.xml" value="0.20925925925925926" />
         <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/activity_navigation_acitvity.xml" value="0.2046875" />
@@ -25,8 +30,9 @@
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/fragment_memo.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2046875" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/row_news_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/slidelayout.xml" value="0.16" />
       </map>
     </option>
   </component>

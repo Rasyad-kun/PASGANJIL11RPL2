@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,11 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.pasganjil11rpl2.Fragments.HistoryFragment;
+import com.example.pasganjil11rpl2.Fragments.MemoFragment;
+import com.example.pasganjil11rpl2.Fragments.NewsFragment;
+import com.example.pasganjil11rpl2.Fragments.ProfileFragment;
+import com.example.pasganjil11rpl2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavigationActivity extends AppCompatActivity {

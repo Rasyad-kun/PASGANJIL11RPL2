@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.example.pasganjil11rpl2.R;
 
 public class WebViewActivity extends AppCompatActivity {
     String url;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Activities.MainActivity"
     android:background="@color/background_black">
 
     <RelativeLayout
@@ -13,7 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/headlineslogo" />
+
         <TextView
+            android:layout_below="@id/logo"
             android:id="@+id/logoname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

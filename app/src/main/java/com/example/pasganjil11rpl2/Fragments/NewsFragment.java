@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +18,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.pasganjil11rpl2.Activities.WebViewActivity;
 import com.example.pasganjil11rpl2.Adapter.NewsAdapter;
 import com.example.pasganjil11rpl2.Model.NewsModel;
+import com.example.pasganjil11rpl2.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

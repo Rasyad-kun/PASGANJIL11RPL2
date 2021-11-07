@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,36 +17,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.pasganjil11rpl2.Activities.MainActivity;
+import com.example.pasganjil11rpl2.Activities.EditProfile;
+import com.example.pasganjil11rpl2.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ProfileFragment extends Fragment{
     public static String userID;
@@ -53,10 +40,13 @@ public class ProfileFragment extends Fragment{
     private ImageView editprofile1, editprofile2, editprofile3, profilepic;
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
+    private FirebaseUser fUser;
     private ProgressBar progressBar;
     public static final String TAG = "TAG";
     private ListenerRegistration registration;
     private StorageReference storageRef;
+    private TextView verify_link;
+    private RelativeLayout verification;
 
     @Nullable
     @Override
@@ -68,6 +58,8 @@ public class ProfileFragment extends Fragment{
         profilepic = v.findViewById(R.id.profilepic);
         logout = v.findViewById(R.id.log_out);
         progressBar = v.findViewById(R.id.progressbar);
+        verification = v.findViewById(R.id.verification);
+        verify_link = v.findViewById(R.id.verify_link);
 
         editprofile1 = v.findViewById(R.id.editlogo1);
         editprofile2 = v.findViewById(R.id.editlogo2);
@@ -75,6 +67,7 @@ public class ProfileFragment extends Fragment{
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        fUser = fAuth.getCurrentUser();
         userID = fAuth.getCurrentUser().getUid();
 
         storageRef = FirebaseStorage.getInstance().getReference();
@@ -135,6 +128,30 @@ public class ProfileFragment extends Fragment{
                 Logout();
             }
         });
+
+        if (!fUser.isEmailVerified()) {
+            verification.setVisibility(View.VISIBLE);
+            verify_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(getContext(), "Verification Email has been sent",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "Error has occurred: " + e.getMessage()
+                                    , Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+        } else {
+            verification.setVisibility(View.GONE);
+        }
 
         return v;
     }

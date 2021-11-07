@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".Activities.LoginActivity"
     android:background="@color/background_black">
 
     <RelativeLayout
@@ -13,10 +13,19 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/headlineslogo" />
+
         <TextView
             android:id="@+id/logoname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
             android:text="NewsBringer"
             android:textColor="@color/white"
