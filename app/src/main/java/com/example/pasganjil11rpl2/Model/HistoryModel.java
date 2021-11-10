@@ -6,16 +6,17 @@ import io.realm.annotations.PrimaryKey;
 public class HistoryModel extends RealmObject {
     @PrimaryKey
     Integer id;
-    String title, urlToImage;
-    int time;
+    String title, urlToImage, name, currentTime, url;
 
     public HistoryModel() {
     }
 
-    public HistoryModel(String title, String urlToImage, int time) {
+    public HistoryModel(String title, String urlToImage, String name, String currentTime, String url) {
         this.title = title;
         this.urlToImage = urlToImage;
-        this.time = time;
+        this.name = name;
+        this.currentTime = currentTime;
+        this.url = url;
     }
 
     public Integer getId() {
@@ -34,7 +35,15 @@ public class HistoryModel extends RealmObject {
         return urlToImage;
     }
 
-    public int getTime() {
-        return time;
+    public String getName() {
+        return name;
+    }
+
+    public String getCurrentTime() {
+        return currentTime;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }
