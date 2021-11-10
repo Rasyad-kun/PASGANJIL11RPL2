@@ -13,4 +13,29 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Default" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/def_header</item>
+        <item name="colorPrimaryVariant">@color/def_headnotifbar</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/def_header</item>
+        <item name="colorSecondaryVariant">@color/def_headnotifbar</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/def_background</item>
+    </style>
+
+    <style name="TitleNews">
+        <item name="android:paddingLeft">4px</item>
+        <item name="android:paddingBottom">4px</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
 </resources>

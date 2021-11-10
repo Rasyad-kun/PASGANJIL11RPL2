@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="270dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="6dp">
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="144dp"-->
+<!--                android:layout_marginBottom="12dp">-->
+
+                <ImageView
+                    android:id="@+id/iv_urlToImage_rowNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_img_row_news_item" />
+
+<!--            </FrameLayout>-->
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_title_rowNews"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="News Article Title Is Supposed To Be Here And What Not So Yeah Remember..."
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@color/def_descbullet" />
+
+            <TextView
+                android:id="@+id/tv_name_rowNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:maxLines="1"
+                android:text="DailyWorldwideNews  -"
+                android:textColor="@color/white"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/tv_publishedAt_rowNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:maxLines="1"
+                android:text="18:30, 21/10/21"
+                android:textColor="@color/white"
+                android:textSize="11dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
