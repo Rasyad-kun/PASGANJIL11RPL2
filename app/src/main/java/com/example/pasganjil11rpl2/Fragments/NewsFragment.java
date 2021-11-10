@@ -38,6 +38,7 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
     private ProgressBar pb_news;
     View v;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -132,12 +133,16 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
         pb_news.setVisibility(View.GONE);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), WebViewActivity.class);
         NewsModel clickedRow = newsList.get(position);
 
         intent.putExtra("url", clickedRow.getUrl());
+        intent.putExtra("title", clickedRow.getTitle());
+        intent.putExtra("name", clickedRow.getName());
+        intent.putExtra("urlToImage", clickedRow.getUrlToImage());
 
 //        Untuk Intent dan intent data
 //        Bundle bundle = new Bundle();
@@ -150,6 +155,5 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
 
         Toast.makeText(v.getContext(), "" + clickedRow.getTitle(), Toast.LENGTH_SHORT).show();
         startActivity(intent);
-
     }
 }
