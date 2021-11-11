@@ -29,6 +29,16 @@
         <item name="android:windowBackground">@color/def_background</item>
     </style>
 
+    <style name="memo" parent="Theme.Default">
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <style name="ActionButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:drawablePadding">@dimen/action_button_padding</item>
+    </style>
+
+    <dimen name="action_button_padding">4dp</dimen>
+
     <style name="TitleNews">
         <item name="android:paddingLeft">4px</item>
         <item name="android:paddingBottom">4px</item>

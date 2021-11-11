@@ -5,11 +5,16 @@
       <map>
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/bg_bottom_nav.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/bg_img_row_news_item.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_bulet.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_delete.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_history.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_new_memo.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_news.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/ic_save.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/item_bullet.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/drawable/item_divider.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_new_memo.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_news_web_view.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_splash_screen.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_web_view.xml" value="0.209375" />
@@ -20,11 +25,15 @@
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_weview.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_history_item.xml" value="0.33" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_history_item2.xml" value="0.4002932551319648" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_news_item.xml" value="0.33" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_memo_item.xml" value="0.33" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_news_item.xml" value="0.25" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/webview_news.xml" value="0.25" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/bottom_nav.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/header_webview.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/menu_fragment_history.xml" value="0.209375" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/menu_fragment_memo.xml" value="0.25" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/menu_item_memo.xml" value="0.209375" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/menu/menu_new_memo.xml" value="0.209375" />
       </map>
     </option>
   </component>

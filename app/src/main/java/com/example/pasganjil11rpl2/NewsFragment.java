@@ -121,12 +121,17 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void ShowData() {
-        DividerItemDecoration itemDecorator = new DividerItemDecoration(v.getContext(), DividerItemDecoration.VERTICAL);
-        itemDecorator.setDrawable(getResources().getDrawable(R.drawable.item_divider));
-        rv_news.addItemDecoration(itemDecorator);
-        NewsAdapter newsAdapter = new NewsAdapter(v.getContext(), newsList);
-        rv_news.setAdapter(newsAdapter);
-        newsAdapter.setOnItemClickListener(this);
+        try {
+            DividerItemDecoration itemDecorator = new DividerItemDecoration(v.getContext(), DividerItemDecoration.VERTICAL);
+            itemDecorator.setDrawable(getResources().getDrawable(R.drawable.item_divider));
+            rv_news.addItemDecoration(itemDecorator);
+            NewsAdapter newsAdapter = new NewsAdapter(v.getContext(), newsList);
+            rv_news.setAdapter(newsAdapter);
+            newsAdapter.setOnItemClickListener(this);
+        } catch (Exception e){
+            Toast.makeText(v.getContext(), "Refreshing!", Toast.LENGTH_SHORT).show();
+            AddData();
+        }
 
         pb_news.setVisibility(View.GONE);
     }
