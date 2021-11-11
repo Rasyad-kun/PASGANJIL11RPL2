@@ -2,4 +2,8 @@
     <string name="app_name">PASGANJIL11RPL2</string>
     <string name="firebase_web_client_id">760369323295-dqoi5pgtbi9rq16v3ejag0ikn07h3e9l.apps.googleusercontent.com</string>
     <string name="news_about_natural_disasters_accidents_in_multiple_countries"><![CDATA[News About Natural Disasters & Accidents In Multiple Countries]]></string>
+    <string name="content">vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas maecenas</string>
+    <string name="title_row_memo">School Homework</string>
+    <string name="hint_title">Type Your Title Here</string>
+    <string name="no_memo_found">No memo found!</string>
 </resources>

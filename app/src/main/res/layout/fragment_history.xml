@@ -19,7 +19,7 @@
         android:layout_centerInParent="true" />
 
     <TextView
-        android:id="@+id/tv_empty"
+        android:id="@+id/tv_empty_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

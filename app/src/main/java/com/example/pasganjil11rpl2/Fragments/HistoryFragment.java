@@ -31,7 +31,7 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemClickListener {
-    private TextView tv_empty;
+    private TextView tv_empty_history;
     private RecyclerView rv_history;
     private List<HistoryModel> historyList;
     private ProgressBar pb_history;
@@ -45,7 +45,7 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_history, container, false);
 
-        tv_empty = v.findViewById(R.id.tv_empty);
+        tv_empty_history = v.findViewById(R.id.tv_empty_history);
         pb_history = v.findViewById(R.id.pb_history);
         rv_history = v.findViewById(R.id.rv_history);
         rv_history.setHasFixedSize(true);
@@ -53,8 +53,11 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
 
         // Setup Realm
         Realm.init(v.getContext());
-        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
+//        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .build();
         realm = Realm.getInstance(configuration);
+//        realm = Realm.getInstance(Realm.getDefaultConfiguration());
 
         historyHelper = new HistoryHelper(realm);
         historyList = new ArrayList<>();
@@ -79,9 +82,9 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
 
     private void progress() {
         if (historyList.isEmpty()) {
-            tv_empty.setVisibility(View.VISIBLE);
+            tv_empty_history.setVisibility(View.VISIBLE);
         } else {
-            tv_empty.setVisibility(View.INVISIBLE);
+            tv_empty_history.setVisibility(View.INVISIBLE);
         }
         pb_history.setVisibility(View.INVISIBLE);
     }
