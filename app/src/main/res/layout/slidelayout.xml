@@ -31,10 +31,11 @@
 
         <RelativeLayout
             android:id="@+id/topline"
-            android:layout_below="@+id/slide_header"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_below="@+id/slide_header"
+            android:layout_marginTop="20dp"
             android:background="@color/white" />
 
         <TextView
@@ -53,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_below="@+id/slide_desc"
+            android:layout_marginHorizontal="24dp"
             android:background="@color/white" />
     </RelativeLayout>
 

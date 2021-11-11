@@ -1,12 +1,12 @@
 package com.example.pasganjil11rpl2.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.pasganjil11rpl2.Fragments.HistoryFragment;
 import com.example.pasganjil11rpl2.Fragments.MemoFragment;

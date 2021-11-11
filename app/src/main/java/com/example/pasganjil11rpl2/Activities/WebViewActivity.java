@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.pasganjil11rpl2.Model.HistoryModel;
+import com.example.pasganjil11rpl2.R;
 import com.example.pasganjil11rpl2.Realm.HistoryHelper;
 
 import java.text.SimpleDateFormat;

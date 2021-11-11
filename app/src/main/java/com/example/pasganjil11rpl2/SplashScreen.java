@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.pasganjil11rpl2.Activities.MainActivity;
+import com.example.pasganjil11rpl2.Intro.IntroActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                startActivity(new Intent(SplashScreen.this, IntroActivity.class));
                 finish();
             }
         }, 3000);

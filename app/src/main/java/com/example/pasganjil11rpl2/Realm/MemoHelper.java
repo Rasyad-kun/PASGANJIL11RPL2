@@ -8,6 +8,7 @@ import com.example.pasganjil11rpl2.Model.MemoModel;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 public class MemoHelper {
@@ -15,6 +16,10 @@ public class MemoHelper {
 
     public MemoHelper(Realm realm){
         this.realm = realm;
+        RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .allowWritesOnUiThread(true)
+                .build();
+        realm = Realm.getInstance(configuration);
     }
 
     // untuk menyimpan data

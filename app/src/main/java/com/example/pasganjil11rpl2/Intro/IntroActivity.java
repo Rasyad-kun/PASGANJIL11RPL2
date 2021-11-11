@@ -47,6 +47,7 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        getSupportActionBar().hide();
 
         slider = findViewById(R.id.viewpager);
         dotsLayout = findViewById(R.id.dotsLayout);

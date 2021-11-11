@@ -132,7 +132,6 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
             newsAdapter.setOnItemClickListener(this);
         } catch (Exception e){
             Toast.makeText(v.getContext(), "Refreshing!", Toast.LENGTH_SHORT).show();
-            AddData();
         }
 
         pb_news.setVisibility(View.GONE);

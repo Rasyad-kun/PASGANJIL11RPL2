@@ -31,6 +31,7 @@ public class PasswordReset extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_reset);
+        getSupportActionBar().hide();
 
         txt_email = findViewById(R.id.Email);
         sendEmail = findViewById(R.id.reset_button);

@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -20,8 +20,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pasganjil11rpl2.Activities.WebViewActivity;
 import com.example.pasganjil11rpl2.Adapter.HistoryAdapter;
 import com.example.pasganjil11rpl2.Model.HistoryModel;
+import com.example.pasganjil11rpl2.R;
 import com.example.pasganjil11rpl2.Realm.HistoryHelper;
 
 import java.util.ArrayList;

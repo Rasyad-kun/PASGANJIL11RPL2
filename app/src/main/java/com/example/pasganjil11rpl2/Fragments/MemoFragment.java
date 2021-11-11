@@ -1,4 +1,4 @@
-package com.example.pasganjil11rpl2;
+package com.example.pasganjil11rpl2.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -21,7 +21,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.pasganjil11rpl2.Adapter.MemoAdapter;
+import com.example.pasganjil11rpl2.ItemMemoActivity;
 import com.example.pasganjil11rpl2.Model.MemoModel;
+import com.example.pasganjil11rpl2.R;
 import com.example.pasganjil11rpl2.Realm.MemoHelper;
 
 import java.util.ArrayList;
