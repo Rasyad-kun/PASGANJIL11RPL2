@@ -2,9 +2,14 @@ package com.example.pasganjil11rpl2.Realm;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.pasganjil11rpl2.Model.HistoryModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -22,11 +27,17 @@ public class HistoryHelper {
         realm = Realm.getInstance(configuration);
     }
 
+    public static String getCurrentTimes() {
+        String currentTime = new SimpleDateFormat("hh:mm", Locale.getDefault()).format(new Date());
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+        return currentTime + ", " + currentDate;
+    }
+
     // untuk menyimpan data
     public void save(final HistoryModel historyModel){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
+            public void execute(@NonNull Realm realm) {
                 if (realm != null){
                     Log.e("Created", "Database was created");
                     Number currentIdNum = realm.where(HistoryModel.class).max("id");
@@ -56,7 +67,7 @@ public class HistoryHelper {
         final RealmResults<HistoryModel> model = realm.where(HistoryModel.class).equalTo("id", id).findAll();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
+            public void execute(@NonNull Realm realm) {
                 model.deleteFromRealm(0);
             }
         });
@@ -67,7 +78,7 @@ public class HistoryHelper {
         final RealmResults<HistoryModel> model = realm.where(HistoryModel.class).findAll();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
-            public void execute(Realm realm) {
+            public void execute(@NonNull Realm realm) {
                 realm.delete(HistoryModel.class);
             }
         });

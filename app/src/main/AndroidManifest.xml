@@ -8,7 +8,7 @@
         android:name=".Realm.MyApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_logo"
-        android:label="Headlines"
+        android:label="HeadLines"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Default">

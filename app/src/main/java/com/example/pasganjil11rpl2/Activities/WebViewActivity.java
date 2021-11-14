@@ -45,10 +45,10 @@ public class WebViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
-        title = intent.getStringExtra("title");
-        name = intent.getStringExtra("name");
-        urlToImage = intent.getStringExtra("urlToImage");
-        currentTime = currentTimes();
+//        title = intent.getStringExtra("title");
+//        name = intent.getStringExtra("name");
+//        urlToImage = intent.getStringExtra("urlToImage");
+//        currentTime = currentTimes();
 
         pb_webview = findViewById(R.id.pb_webview);
         webView = findViewById(R.id.wv_news);
@@ -59,13 +59,13 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         //init
-        Realm.init(this);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
-        realm = Realm.getInstance(configuration);
-
-        historyModel = new HistoryModel(title, urlToImage, name, currentTime, url);
-        historyHelper = new HistoryHelper(realm);
-        historyHelper.save(historyModel);
+//        Realm.init(this);
+//        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
+//        realm = Realm.getInstance(configuration);
+//
+//        historyModel = new HistoryModel(title, urlToImage, name, currentTime, url);
+//        historyHelper = new HistoryHelper(realm);
+//        historyHelper.save(historyModel);
 
         pb_webview.setVisibility(View.GONE);
     }
@@ -103,9 +103,9 @@ public class WebViewActivity extends AppCompatActivity {
         return true;
     }
 
-    private String currentTimes() {
-        String currentTime = new SimpleDateFormat("hh:mm", Locale.getDefault()).format(new Date());
-        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
-        return currentTime + ", " + currentDate;
-    }
+//    private String currentTimes() {
+//        String currentTime = new SimpleDateFormat("hh:mm", Locale.getDefault()).format(new Date());
+//        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+//        return currentTime + ", " + currentDate;
+//    }
 }

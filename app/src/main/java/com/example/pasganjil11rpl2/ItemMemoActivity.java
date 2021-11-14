@@ -40,7 +40,6 @@ public class ItemMemoActivity extends AppCompatActivity {
             content = intent.getStringExtra("content");
         } catch (Exception e){
             Log.d("no data found!", e.toString());
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         }
 
         et_title = findViewById(R.id.tv_title_newMemo);

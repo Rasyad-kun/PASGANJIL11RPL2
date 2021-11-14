@@ -51,12 +51,16 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
         pb_history = v.findViewById(R.id.pb_history);
         rv_history = v.findViewById(R.id.rv_history);
         rv_history.setHasFixedSize(true);
-        rv_history.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        LinearLayoutManager llm = new LinearLayoutManager(v.getContext());
+        llm.setReverseLayout(true);
+        llm.setStackFromEnd(true);
+        rv_history.setLayoutManager(llm);
 
         // Setup Realm
         Realm.init(v.getContext());
 //        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
         RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .allowWritesOnUiThread(true)
                 .build();
         realm = Realm.getInstance(configuration);
 //        realm = Realm.getInstance(Realm.getDefaultConfiguration());
@@ -98,10 +102,17 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
         Intent intent = new Intent(getActivity(), WebViewActivity.class);
         HistoryModel clickedRow = historyList.get(position);
 
-        intent.putExtra("url", clickedRow.getUrl());
-        intent.putExtra("title", clickedRow.getTitle());
-        intent.putExtra("name", clickedRow.getName());
-        intent.putExtra("urlToImage", clickedRow.getUrlToImage());
+        String title, urlToImage, name, currentTime, url;
+        title = clickedRow.getTitle();
+        urlToImage = clickedRow.getUrlToImage();
+        name = clickedRow.getName();
+        currentTime = historyHelper.getCurrentTimes();
+        url = clickedRow.getUrl();
+
+        intent.putExtra("url", url);
+//        intent.putExtra("title", title);
+//        intent.putExtra("name", name);
+//        intent.putExtra("urlToImage", url);
 
 //        Untuk Intent dan intent data
 //        Bundle bundle = new Bundle();
@@ -111,6 +122,8 @@ public class HistoryFragment extends Fragment implements HistoryAdapter.OnItemCl
 //
 //        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                new WebVIewFragment()).commit();
+
+        historyHelper.save(new HistoryModel(title, urlToImage, name, currentTime, url));
 
         Toast.makeText(v.getContext(), "" + clickedRow.getTitle(), Toast.LENGTH_SHORT).show();
         startActivity(intent);

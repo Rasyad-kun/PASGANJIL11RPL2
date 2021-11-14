@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LoginActivity"
-    android:background="@color/background_black">
+    android:background="@color/background_black"
+    tools:context=".Activities.LoginActivity">
 
     <RelativeLayout
         android:id="@+id/layout"
@@ -19,7 +19,8 @@
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/headlineslogo" />
+            app:srcCompat="@drawable/ic_logo"
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/logoname"
@@ -27,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
-            android:text="NewsBringer"
+            android:text="HeadLines"
             android:textColor="@color/white"
             android:textFontWeight="500"
             android:textSize="48dp" />
@@ -45,13 +46,13 @@
             android:textStyle="bold" />
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/login_title"
             android:id="@+id/line1"
             android:layout_width="match_parent"
             android:layout_height="4dp"
+            android:layout_below="@+id/login_title"
             android:layout_alignParentRight="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_radius" />
 
         <EditText
@@ -65,6 +66,7 @@
             android:hint="Email"
             android:inputType="text"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <EditText
@@ -78,6 +80,7 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -114,7 +117,7 @@
             android:text="Forgot Password?"
             android:textColor="@color/white"
             android:textSize="16dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

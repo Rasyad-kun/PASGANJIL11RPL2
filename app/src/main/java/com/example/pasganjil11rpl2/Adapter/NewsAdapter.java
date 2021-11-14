@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,9 +19,10 @@ import com.example.pasganjil11rpl2.R;
 
 import java.util.ArrayList;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> implements Filterable {
     private final Context naContext;
     private final ArrayList<NewsModel> naNewsList;
+    private final ArrayList<NewsModel> naNewsListFull; // SearchView
 
     //OnItemClickListener
     private OnItemClickListener naListener;
@@ -36,6 +39,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public NewsAdapter(Context aContext, ArrayList<NewsModel> aNewsList) {
         this.naContext = aContext;
         this.naNewsList = aNewsList;
+        naNewsListFull = new ArrayList<>(naNewsList); // SearchView
     }
 
     @NonNull
@@ -65,6 +69,47 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public int getItemCount() {
         return naNewsList.size();
     }
+
+    //SearchView
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private final Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<NewsModel> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(naNewsListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (NewsModel item : naNewsListFull) {
+                    boolean t = item.getTitle().toLowerCase().contains(filterPattern);
+                    boolean n = item.getName().toLowerCase().contains(filterPattern);
+                    boolean p = item.getPublishedAt().toLowerCase().contains(filterPattern);
+                    if (t || n || p){
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @SuppressLint("NotifyDataSetChanged")
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            naNewsList.clear();
+            naNewsList.addAll((ArrayList) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class NewsViewHolder extends RecyclerView.ViewHolder {
         public ImageView naUrlToImage;

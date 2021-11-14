@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MainActivity"
-    android:background="@color/background_black">
+    android:background="@color/background_black"
+    tools:context=".Activities.MainActivity">
 
     <RelativeLayout
         android:id="@+id/layout"
@@ -14,20 +14,21 @@
         android:layout_centerInParent="true">
 
         <ImageView
-            android:layout_centerHorizontal="true"
             android:id="@+id/logo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            app:srcCompat="@drawable/headlineslogo" />
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/ic_logo"
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:layout_below="@id/logo"
             android:id="@+id/logoname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
-            android:text="NewsBringer"
+            android:text="HeadLines"
             android:textColor="@color/white"
             android:textFontWeight="500"
             android:textSize="48dp" />
@@ -108,6 +109,7 @@
             android:hint="Username"
             android:inputType="text"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <EditText
@@ -121,6 +123,7 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <EditText
@@ -134,6 +137,7 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
+            android:textColor="@color/black"
             android:textSize="16dp" />
 
         <androidx.appcompat.widget.AppCompatButton
