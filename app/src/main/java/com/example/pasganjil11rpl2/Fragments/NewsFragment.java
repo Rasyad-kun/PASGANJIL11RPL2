@@ -3,6 +3,7 @@ package com.example.pasganjil11rpl2.Fragments;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
@@ -31,6 +33,7 @@ import com.example.pasganjil11rpl2.Model.HistoryModel;
 import com.example.pasganjil11rpl2.Model.NewsModel;
 import com.example.pasganjil11rpl2.R;
 import com.example.pasganjil11rpl2.Realm.HistoryHelper;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,8 +48,9 @@ import io.realm.RealmConfiguration;
 public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickListener {
     private RecyclerView rv_news;
     private ArrayList<NewsModel> newsList;
-    private ProgressBar pb_news;
+    private LinearProgressIndicator pb_news;
     private NewsAdapter newsAdapter;
+    private SwipeRefreshLayout refreshLayout_news;
     View v;
 
 
@@ -56,12 +60,30 @@ public class NewsFragment extends Fragment implements NewsAdapter.OnItemClickLis
                              @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_news, container, false);
 
+        refreshLayout_news = v.findViewById(R.id.srl_refreshLayout_news);
         pb_news = v.findViewById(R.id.pb_news);
         rv_news = v.findViewById(R.id.rv_news);
         rv_news.setHasFixedSize(true);
         rv_news.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        pb_news.setVisibility(View.VISIBLE);
 
         AddData();
+
+        refreshLayout_news.setProgressBackgroundColorSchemeResource(R.color.def_header);
+        refreshLayout_news.setColorSchemeResources(android.R.color.holo_orange_dark, android.R.color.holo_red_dark);
+        refreshLayout_news.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        AddData();
+                        Toast.makeText(v.getContext(), "Reloading now!", Toast.LENGTH_SHORT).show();
+                        refreshLayout_news.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
         return v;
     }
 

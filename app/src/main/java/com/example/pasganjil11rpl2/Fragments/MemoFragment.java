@@ -3,6 +3,7 @@ package com.example.pasganjil11rpl2.Fragments;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,12 +20,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.pasganjil11rpl2.Adapter.MemoAdapter;
 import com.example.pasganjil11rpl2.ItemMemoActivity;
 import com.example.pasganjil11rpl2.Model.MemoModel;
 import com.example.pasganjil11rpl2.R;
 import com.example.pasganjil11rpl2.Realm.MemoHelper;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,22 +39,25 @@ public class MemoFragment extends Fragment implements MemoAdapter.OnItemClickLis
     private TextView tv_empty_memo;
     private RecyclerView rv_memo;
     private List<MemoModel> memoList;
-    private ProgressBar pb_memo;
+    private LinearProgressIndicator pb_memo;
     private MemoAdapter memoAdapter;
     Realm realm;
     MemoHelper memoHelper;
     View v;
+    SwipeRefreshLayout refreshLayout_memo;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_memo, container, false);
 
+        refreshLayout_memo = v.findViewById(R.id.srl_refreshLayout_memo);
         tv_empty_memo = v.findViewById(R.id.tv_empty_memo);
         pb_memo = v.findViewById(R.id.pb_memo);
         rv_memo = v.findViewById(R.id.rv_memo);
         rv_memo.setHasFixedSize(true);
         rv_memo.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
+        pb_memo.setVisibility(View.VISIBLE);
 
         // Setup Realm
         Realm.init(v.getContext());
@@ -67,6 +73,25 @@ public class MemoFragment extends Fragment implements MemoAdapter.OnItemClickLis
         memoList = memoHelper.getAllHistory();
 
         show();
+
+        refreshLayout_memo.setProgressBackgroundColorSchemeResource(R.color.def_header);
+        refreshLayout_memo.setColorSchemeResources(
+                android.R.color.holo_blue_dark, android.R.color.holo_orange_dark, android.R.color.holo_red_dark);
+        refreshLayout_memo.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                pb_memo.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refresh();
+                        progress();
+                        Toast.makeText(v.getContext(), "Reloading now!", Toast.LENGTH_SHORT).show();
+                        refreshLayout_memo.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
 
         return v;
     }

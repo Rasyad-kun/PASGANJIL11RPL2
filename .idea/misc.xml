@@ -19,14 +19,15 @@
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_item_memo.xml" value="0.25" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_navigation.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_new_memo.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_news_web_view.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_password_reset.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_splash_screen.xml" value="0.209375" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_web_view.xml" value="0.209375" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/activity_web_view.xml" value="0.33" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_history.xml" value="0.33" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_memo.xml" value="0.33" />
-        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_news.xml" value="0.25" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_memo.xml" value="0.22" />
+        <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_news.xml" value="0.14586357039187228" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_profile.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/fragment_weview.xml" value="0.209375" />
         <entry key="..\:/Project/AndroidStudioProjects/PASGANJIL11RPL2/app/src/main/res/layout/row_history_item.xml" value="0.33" />
